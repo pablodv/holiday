@@ -5,7 +5,7 @@ class Admin::CoreController < ApplicationController
     end
 
   def app_name
-    "Bookr v.1.0"
+    "Holiday Reminder"
   end
 
   set_module :clients
