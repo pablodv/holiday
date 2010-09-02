@@ -770,3 +770,710 @@ ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css"
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100902183958)
+Migrating to AddToUser (20100902190008)
+Migrating to CreateClients (20100902190833)
+Migrating to CreateHolidays (20100902192503)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "holidays" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "day" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100902192503')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("clients")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("holidays")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:26:58) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"index", "authenticity_token"=>"6Dp0+CsDAOneI+4CqhKn8AQL60wla6llOPbQX731I5U=", "client"=>{"name"=>"q", "email"=>"q"}, "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.5ms)[0m   [0;1mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.0ms)
+Rendered admin/clients/_list (1.4ms)
+Rendered commons/_session (0.6ms)
+Completed in 38ms (View: 32, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:26:58) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:27:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:27:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.5ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day ASC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.4ms)
+Rendered admin/holidays/_list (1.2ms)
+Rendered commons/_session (0.2ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (101.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mHoliday Load (0.3ms)[0m   [0;1mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.3ms)
+Rendered admin/holidays/_list (0.7ms)
+Rendered commons/_session (0.2ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (46.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.8ms)
+Rendered admin/holidays/_list (0.6ms)
+Rendered commons/_session (0.2ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (49.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mHoliday Load (0.3ms)[0m   [0;1mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.9ms)
+Rendered admin/holidays/_list (0.7ms)
+Rendered commons/_session (0.2ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (105.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.4ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.5ms)
+Rendered admin/holidays/_list (0.6ms)
+Rendered commons/_session (0.1ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (46.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mHoliday Load (0.4ms)[0m   [0;1mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.4ms)
+Rendered admin/holidays/_list (0.6ms)
+Rendered commons/_session (0.1ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (110.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.3ms)
+Rendered admin/holidays/_list (0.7ms)
+Rendered commons/_session (0.1ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (115.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mHoliday Load (0.5ms)[0m   [0;1mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.3ms)
+Rendered admin/holidays/_list (0.7ms)
+Rendered commons/_session (0.2ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (47.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.4ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.4ms)
+Rendered admin/holidays/_list (0.7ms)
+Rendered commons/_session (0.2ms)
+
+ActionView::TemplateError (Must define application modules. See AdministrateMe::Base#set_module documentation for further information.) on line #33 of app/views/layouts/admin_layout.html.erb:
+30:             <div class="box-content"> 
+31:               <div class="top-panel">              
+32:                 <div class="navigation">
+33:                   <% generate_navigation.each do |tab| %>
+34:                     <%= link_to tab.caption, tab.url, :class => tab.class_name %>
+35:                   <% end %>
+36:                 </div>
+
+    app/views/layouts/admin_layout.html.erb:33
+
+Rendered rescues/_trace (110.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mHoliday Load (0.4ms)[0m   [0;1mSELECT * FROM "holidays" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.3ms)
+Rendered admin/holidays/_list (0.6ms)
+Rendered commons/_session (0.1ms)
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:28:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.7ms)
+Rendered admin/holidays/_list (0.8ms)
+Rendered commons/_session (0.2ms)
+Completed in 70ms (View: 65, DB: 0) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:28:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:28:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mHoliday Load (0.5ms)[0m   [0;1mSELECT * FROM "holidays" ORDER BY day[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.3ms)
+Rendered admin/holidays/_list (0.8ms)
+Rendered commons/_session (0.2ms)
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:28:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#new (for 127.0.0.1 at 2010-09-02 16:28:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/holidays"}
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/holidays/_form (9.7ms)
+Rendered commons/_session (0.1ms)
+Completed in 29ms (View: 25, DB: 0) | 200 OK [http://localhost/admin/holidays/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:28:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:29:06) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"index", "authenticity_token"=>"6Dp0+CsDAOneI+4CqhKn8AQL60wla6llOPbQX731I5U=", "holiday"=>{"name"=>"feriado", "day(1i)"=>"2010", "day(2i)"=>"9", "description"=>"este es un dia feriado", "day(3i)"=>"2"}, "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.8ms)
+Rendered admin/holidays/_list (0.6ms)
+Rendered commons/_session (0.2ms)
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:29:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:29:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.4ms)[0m   [0;1mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.1ms)
+Rendered admin/clients/_list (0.6ms)
+Rendered commons/_session (0.1ms)
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:29:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:29:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.4ms)
+Rendered admin/holidays/_list (0.7ms)
+Rendered commons/_session (0.2ms)
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:29:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:29:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.9ms)
+Rendered admin/clients/_list (0.7ms)
+Rendered commons/_session (0.2ms)
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:29:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "clients" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "holidays" [0m
+  [4;36;1mClient Load (0.1ms)[0m   [0;1mSELECT "clients".id FROM "clients" WHERE ("clients"."name" = 'pablo') LIMIT 1[0m
+  [4;35;1mClient Load (0.0ms)[0m   [0mSELECT "clients".id FROM "clients" WHERE ("clients"."email" = 'pablo@pablo.com') LIMIT 1[0m
+  [4;36;1mClient Create (0.3ms)[0m   [0;1mINSERT INTO "clients" ("name", "created_at", "updated_at", "email") VALUES('pablo', '2010-09-02 19:37:18', '2010-09-02 19:37:18', 'pablo@pablo.com')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "clients" [0m
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:37:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.5ms)[0m   [0;1mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.0ms)
+Rendered admin/clients/_list (5.9ms)
+Rendered commons/_session (0.7ms)
+Completed in 90ms (View: 85, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:37:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#show (for 127.0.0.1 at 2010-09-02 16:37:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"admin/clients"}
+  [4;35;1mClient Load (0.2ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering admin/clients/show
+Rendered commons/_session (0.2ms)
+Completed in 22ms (View: 16, DB: 0) | 200 OK [http://localhost/admin/clients/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:37:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#edit (for 127.0.0.1 at 2010-09-02 16:37:54) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.1ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/clients/_form (1.9ms)
+Rendered commons/_session (0.2ms)
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://localhost/admin/clients/edit/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:37:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#show (for 127.0.0.1 at 2010-09-02 16:37:56) [PUT]
+  Parameters: {"commit"=>"Save", "action"=>"show", "_method"=>"put", "authenticity_token"=>"6Dp0+CsDAOneI+4CqhKn8AQL60wla6llOPbQX731I5U=", "id"=>"1", "client"=>{"name"=>"pablo", "email"=>"pablo@pablo.com"}, "controller"=>"admin/clients"}
+  [4;35;1mClient Load (0.1ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering admin/clients/show
+Rendered commons/_session (0.2ms)
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/clients/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:37:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:38:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.5ms)[0m   [0;1mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.9ms)
+Rendered admin/clients/_list (4.4ms)
+Rendered commons/_session (0.2ms)
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:38:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#edit (for 127.0.0.1 at 2010-09-02 16:38:03) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/clients"}
+  [4;35;1mClient Load (0.1ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/clients/_form (1.8ms)
+Rendered commons/_session (0.2ms)
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/clients/edit/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:38:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:38:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.5ms)[0m   [0;1mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.9ms)
+Rendered admin/clients/_list (4.4ms)
+Rendered commons/_session (0.1ms)
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:38:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#new (for 127.0.0.1 at 2010-09-02 16:38:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/clients"}
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/clients/_form (1.4ms)
+Rendered commons/_session (0.1ms)
+Completed in 62ms (View: 57, DB: 0) | 200 OK [http://localhost/admin/clients/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:38:07) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:38:17) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"index", "authenticity_token"=>"6Dp0+CsDAOneI+4CqhKn8AQL60wla6llOPbQX731I5U=", "client"=>{"name"=>"fede", "email"=>"fede@fede.com"}, "controller"=>"admin/clients"}
+  [4;35;1mClient Load (0.5ms)[0m   [0mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.3ms)
+Rendered admin/clients/_list (4.4ms)
+Rendered commons/_session (0.2ms)
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:38:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:38:48) [GET]
+  Parameters: {"all"=>"1", "action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.4ms)[0m   [0;1mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.9ms)
+Rendered admin/clients/_list (4.2ms)
+Rendered commons/_session (0.2ms)
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/admin/clients?all=1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:38:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#edit (for 127.0.0.1 at 2010-09-02 16:39:06) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/clients"}
+  [4;35;1mClient Load (0.1ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/clients/_form (1.5ms)
+Rendered commons/_session (0.3ms)
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/admin/clients/edit/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:39:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#show (for 127.0.0.1 at 2010-09-02 16:39:10) [PUT]
+  Parameters: {"commit"=>"Save", "action"=>"show", "_method"=>"put", "authenticity_token"=>"6Dp0+CsDAOneI+4CqhKn8AQL60wla6llOPbQX731I5U=", "id"=>"1", "client"=>{"name"=>"pablof", "email"=>"pablo@pablo.com"}, "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.1ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+Rendering template within layouts/admin_layout
+Rendering admin/clients/show
+Rendered commons/_session (0.2ms)
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/admin/clients/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:39:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:39:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (6.0ms)
+Rendered admin/clients/_list (4.7ms)
+Rendered commons/_session (0.2ms)
+Completed in 68ms (View: 17, DB: 0) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:39:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-02 16:41:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mClient Load (0.4ms)[0m   [0;1mSELECT * FROM "clients" ORDER BY created_at DESC[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.0ms)
+Rendered admin/clients/_list (4.3ms)
+Rendered commons/_session (0.1ms)
+Completed in 21ms (View: 14, DB: 0) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:41:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-02 16:41:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" ORDER BY day[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.0ms)
+Rendered admin/holidays/_list (1.3ms)
+Rendered commons/_session (0.2ms)
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-02 16:41:02) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

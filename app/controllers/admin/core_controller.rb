@@ -9,4 +9,5 @@ class Admin::CoreController < ApplicationController
   end
 
   set_module :clients
+  set_module :holidays
 end
