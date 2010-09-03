@@ -9190,3 +9190,290 @@ ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css"
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100902183958)
+Migrating to AddToUser (20100902190008)
+Migrating to CreateClients (20100902190833)
+Migrating to CreateHolidays (20100902192503)
+Migrating to AddUsersPasswordResetFields (20100903135231)
+Migrating to AddUserToClients (20100903144747)
+Migrating to AddUserToHolidays (20100903144801)
+Migrating to AddNotificationColumn (20100903155150)
+Migrating to AddActiveToUser (20100903175057)
+Migrating to AddOpenidToUser (20100903203252)
+Migrating to AddCheckedToHolidays (20100903205416)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "holidays" ADD "checked" boolean[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100903205416')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("clients")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("holidays")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 17:55:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 70ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-03 17:55:17) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"prueba2"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'prueba2') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "login_count" = 2, "updated_at" = '2010-09-03 20:55:17', "perishable_token" = 'YWVOOz2wxehHdw1tivt', "last_request_at" = '2010-09-03 20:55:17', "last_login_at" = '2010-09-03 20:49:09', "last_login_ip" = '127.0.0.1', "current_login_at" = '2010-09-03 20:55:17' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/admin/clients
+Completed in 242ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-03 17:55:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 20:55:18', "perishable_token" = 'PWRnIJ3abytjf7dSENXt', "last_request_at" = '2010-09-03 20:55:18' WHERE "id" = 9[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" WHERE (("clients"."user_id" = 9)) ORDER BY clients.name[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (3.8ms)
+Rendered admin/clients/_list (1.4ms)
+Rendered commons/_session (1.5ms)
+Completed in 170ms (View: 33, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 17:55:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-03 17:59:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 20:59:37', "perishable_token" = 'RnFFGveo4qwHCgqZ6Sx', "last_request_at" = '2010-09-03 20:59:37' WHERE "id" = 9[0m
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" WHERE (("holidays"."user_id" = 9)) ORDER BY holidays.day[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.8ms)
+Rendered admin/holidays/_list (1.5ms)
+Rendered commons/_session (1.1ms)
+Completed in 186ms (View: 18, DB: 1) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 17:59:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#new (for 127.0.0.1 at 2010-09-03 17:59:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/holidays"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 20:59:39', "perishable_token" = 'G5XmFW4PsfWJo9JMHD1', "last_request_at" = '2010-09-03 20:59:39' WHERE "id" = 9[0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/holidays/_form (5.2ms)
+Rendered commons/_session (1.1ms)
+Completed in 129ms (View: 20, DB: 1) | 200 OK [http://localhost/admin/holidays/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 17:59:39) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-03 17:59:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 20:59:55', "perishable_token" = 'vaToDWBTLDyECvj65av', "last_request_at" = '2010-09-03 20:59:55' WHERE "id" = 9[0m
+  [4;36;1mHoliday Load (0.3ms)[0m   [0;1mSELECT * FROM "holidays" WHERE (("holidays"."user_id" = 9)) ORDER BY holidays.day[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.0ms)
+Rendered admin/holidays/_list (0.7ms)
+Rendered commons/_session (1.1ms)
+Completed in 109ms (View: 12, DB: 1) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 17:59:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-03 18:01:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 21:01:38', "perishable_token" = 'YDVrZjekJgEnHb0Kd', "last_request_at" = '2010-09-03 21:01:38' WHERE "id" = 9[0m
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" WHERE (("holidays"."user_id" = 9)) ORDER BY holidays.day[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.4ms)
+Rendered admin/holidays/_list (1.2ms)
+Rendered commons/_session (1.1ms)
+Completed in 188ms (View: 81, DB: 1) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 18:01:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#new (for 127.0.0.1 at 2010-09-03 18:01:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/holidays"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 21:01:41', "perishable_token" = 'DPS2mPU03182KCHv5ar', "last_request_at" = '2010-09-03 21:01:41' WHERE "id" = 9[0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/holidays/_form (5.8ms)
+Rendered commons/_session (1.1ms)
+Completed in 110ms (View: 18, DB: 1) | 200 OK [http://localhost/admin/holidays/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 18:01:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#create (for 127.0.0.1 at 2010-09-03 18:01:57) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "holiday"=>{"checked"=>"0", "name"=>"feriado", "day(1i)"=>"2010", "day(2i)"=>"9", "description"=>"feriado", "day(3i)"=>"3"}, "controller"=>"admin/holidays"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 21:01:57', "perishable_token" = 'E1DT65lfFyg66IkCv5Di', "last_request_at" = '2010-09-03 21:01:57' WHERE "id" = 9[0m
+  [4;36;1mHoliday Create (0.2ms)[0m   [0;1mINSERT INTO "holidays" ("name", "checked", "created_at", "updated_at", "day", "user_id", "description") VALUES('feriado', 'f', '2010-09-03 21:01:57', '2010-09-03 21:01:57', '2010-09-03', 9, 'feriado')[0m
+Redirected to http://localhost:3000/admin/holidays
+Completed in 229ms (DB: 1) | 302 Found [http://localhost/admin/holidays]
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-03 18:01:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 21:01:57', "perishable_token" = '3gV3Cn5VN6G7k7GxW3V5', "last_request_at" = '2010-09-03 21:01:57' WHERE "id" = 9[0m
+  [4;35;1mHoliday Load (0.2ms)[0m   [0mSELECT * FROM "holidays" WHERE (("holidays"."user_id" = 9)) ORDER BY holidays.day[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (2.5ms)
+Rendered admin/holidays/_list (3.4ms)
+Rendered commons/_session (1.0ms)
+Completed in 111ms (View: 12, DB: 1) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 18:01:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-03 18:02:03) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (17.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 21:02:03', "perishable_token" = 'wpB98vbrjK4Q5pKhHmoz', "last_request_at" = '2010-09-03 21:02:03' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/login
+Completed in 177ms (DB: 18) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 18:02:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 19ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-03 18:02:14) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"prueba2"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'prueba2') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "login_count" = 3, "updated_at" = '2010-09-03 21:02:14', "perishable_token" = 'S9ZKHo2g1vWwiPMfrjMo', "last_request_at" = '2010-09-03 21:02:14', "last_login_at" = '2010-09-03 20:55:17', "current_login_at" = '2010-09-03 21:02:14' WHERE "id" = 9[0m
+Redirected to http://localhost:3000/admin/clients
+Completed in 99ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-03 18:02:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 21:02:14', "perishable_token" = 'BhmKAAMJ9FnWhodH6zmx', "last_request_at" = '2010-09-03 21:02:14' WHERE "id" = 9[0m
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM "clients" WHERE (("clients"."user_id" = 9)) ORDER BY clients.name[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (5.3ms)
+Rendered admin/clients/_list (1.3ms)
+Rendered commons/_session (1.1ms)
+Completed in 137ms (View: 15, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 18:02:14) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-03 18:02:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 21:02:17', "perishable_token" = 'e5PR2L6gtN7PEKjKmIJ', "last_request_at" = '2010-09-03 21:02:17' WHERE "id" = 9[0m
+  [4;36;1mHoliday Load (0.4ms)[0m   [0;1mSELECT * FROM "holidays" WHERE (("holidays"."user_id" = 9)) ORDER BY holidays.day[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (2.5ms)
+Rendered admin/holidays/_list (3.4ms)
+Rendered commons/_session (1.1ms)
+Completed in 123ms (View: 12, DB: 2) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 18:02:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::HolidaysController#index (for 127.0.0.1 at 2010-09-03 18:03:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/holidays"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '9') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 21:03:17', "perishable_token" = '9RyAvLll1xZSFsLjOGbI', "last_request_at" = '2010-09-03 21:03:17' WHERE "id" = 9[0m
+  [4;36;1mHoliday Load (0.3ms)[0m   [0;1mSELECT * FROM "holidays" WHERE (("holidays"."user_id" = 9)) ORDER BY holidays.day[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (2.5ms)
+Rendered admin/holidays/_list (3.4ms)
+Rendered commons/_session (1.6ms)
+Completed in 189ms (View: 21, DB: 1) | 200 OK [http://localhost/admin/holidays]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 18:03:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
