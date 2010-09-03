@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20100902192503) do
 
   create_table "users", :force => true do |t|
     t.string   "full_name"
+    t.string   "state"
+    t.string   "country"
     t.string   "login",                              :null => false
     t.string   "email",                              :null => false
     t.string   "crypted_password",                   :null => false

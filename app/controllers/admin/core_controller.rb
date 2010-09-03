@@ -1,4 +1,5 @@
 class Admin::CoreController < ApplicationController
+  before_filter :require_user
 
   def owner
       "Ruby on Rails 2010"

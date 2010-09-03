@@ -2,9 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
+  helper :all
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
 
@@ -32,7 +30,7 @@ class ApplicationController < ActionController::Base
       if current_user
         store_location
         flash[:notice] = "You must be logged out to access this page"
-        redirect_to account_url
+        redirect_to admin_clients_path
         return false
       end
     end
