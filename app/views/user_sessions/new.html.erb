@@ -13,5 +13,7 @@
   <%= f.submit "Login" %>
 <% end %>
 
-  <%= link_to 'Signup', signup_path %>
-  <%= link_to 'Forgot Password', :controller => "password_resets"%>
+  <%= link_to 'Signup', signup_path %> <br/>
+  <%= link_to 'Forgot Password', :controller => "password_resets", 
+                                                :action => "new"%> <br/>
+   <%= link_to 'Change Password', :controller => "password_resets"%> <br/>

@@ -6747,3 +6747,629 @@ ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css"
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-03 12:20:02) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:20:03', "perishable_token" = 'ZMFLRTiK0SS0OawVzAb6', "last_request_at" = '2010-09-03 15:20:03' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/login
+Completed in 172ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:20:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#index (for 127.0.0.1 at 2010-09-03 12:20:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-03 12:20:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering password_resets/new
+Completed in 17ms (View: 4, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing PasswordResetsController#create (for 127.0.0.1 at 2010-09-03 12:20:39) [POST]
+  Parameters: {"commit"=>"Reset my password", "action"=>"create", "controller"=>"password_resets", "email"=>"pablof@insignia4u.com"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'pablof@insignia4u.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:20:39', "perishable_token" = 'R6NYqKX9jKNFY9DkVp' WHERE "id" = 1[0m
+Sent mail to pablof@insignia4u.com
+
+Date: Fri, 3 Sep 2010 12:20:39 -0300
+To: pablof@insignia4u.com
+Subject: Password Reset Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+ A request to reset your password has been made.
+ If you did not make this request, simply ignore this email.
+ If you did make this request just click the link below:
+
+ If the above URL does not work try copying and pasting it into your browser.
+ If you continue to have problem please feel free to contact us.
+Redirected to http://localhost:3000/
+Completed in 191ms (DB: 1) | 302 Found [http://localhost/password_resets]
+
+
+Processing PasswordResetsController#create (for 127.0.0.1 at 2010-09-03 12:22:24) [POST]
+  Parameters: {"commit"=>"Reset my password", "action"=>"create", "controller"=>"password_resets", "email"=>"pablof@insignia4u.com"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'pablof@insignia4u.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:22:24', "perishable_token" = '1uNxZsMZE1yThBKwNXS' WHERE "id" = 1[0m
+Sent mail to pablof@insignia4u.com
+
+Date: Fri, 3 Sep 2010 12:22:24 -0300
+To: pablof@insignia4u.com
+Subject: Password Reset Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+ A request to reset your password has been made.
+ If you did not make this request, simply ignore this email.
+ If you did make this request just click the link below:
+
+ If the above URL does not work try copying and pasting it into your browser.
+ If you continue to have problem please feel free to contact us.
+Redirected to http://localhost:3000/login
+Completed in 111ms (DB: 1) | 302 Found [http://localhost/password_resets]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:22:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 16ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#create (for 127.0.0.1 at 2010-09-03 12:22:36) [POST]
+  Parameters: {"commit"=>"Reset my password", "action"=>"create", "controller"=>"password_resets", "email"=>"pablof@insignia4u.com"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'pablof@insignia4u.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:22:36', "perishable_token" = '6pe4bA3DGVYejb8fWJHC' WHERE "id" = 1[0m
+Sent mail to pablof@insignia4u.com
+
+Date: Fri, 3 Sep 2010 12:22:36 -0300
+To: pablof@insignia4u.com
+Subject: Password Reset Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+ A request to reset your password has been made.
+ If you did not make this request, simply ignore this email.
+ If you did make this request just click the link below:
+
+ If the above URL does not work try copying and pasting it into your browser.
+ If you continue to have problem please feel free to contact us.
+Redirected to http://localhost:3000/login
+Completed in 116ms (DB: 1) | 302 Found [http://localhost/password_resets]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:22:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 16ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-03 12:25:27) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"pablo"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'pablo') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "login_count" = 8, "updated_at" = '2010-09-03 15:25:28', "perishable_token" = 'ixVM4SqaZcx2RU01uF5K', "last_request_at" = '2010-09-03 15:25:28', "last_login_at" = '2010-09-03 15:15:23', "current_login_at" = '2010-09-03 15:25:28' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/admin/clients
+Completed in 183ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-03 12:25:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:25:28', "perishable_token" = 'vqQQSqeinO47REQ704O0', "last_request_at" = '2010-09-03 15:25:28' WHERE "id" = 1[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" WHERE (("clients"."user_id" = 1)) ORDER BY clients.name[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (3.7ms)
+Rendered admin/clients/_list (1.5ms)
+Rendered commons/_session (1.6ms)
+Completed in 160ms (View: 31, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 12:25:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-03 12:28:45) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 15:28:45', "perishable_token" = 'MYyzAWfkwBeGQloIqaYl', "last_request_at" = '2010-09-03 15:28:45' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/login
+Completed in 115ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:28:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 18ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#index (for 127.0.0.1 at 2010-09-03 12:28:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-03 12:28:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering password_resets/new
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:28:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"edit", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:29:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"update", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:35:32) [GET]
+  Parameters: {"action"=>"show", "id"=>"update", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:35:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"update", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:35:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"update", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:35:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"edit", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:35:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"create", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-03 12:35:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering password_resets/new
+Completed in 15ms (View: 1, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing PasswordResetsController#create (for 127.0.0.1 at 2010-09-03 12:42:28) [POST]
+  Parameters: {"commit"=>"Reset my password", "action"=>"create", "controller"=>"password_resets", "email"=>""}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = '') LIMIT 1[0m
+Rendering password_resets/new
+Completed in 15ms (View: 1, DB: 0) | 200 OK [http://localhost/password_resets]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:42:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 16ms (View: 4, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:42:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"edit", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-03 12:43:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (4.2ms)
+Completed in 30ms (View: 16, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing PasswordResetsController#index (for 127.0.0.1 at 2010-09-03 12:43:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:43:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-03 12:43:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering password_resets/new
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-03 12:43:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering password_resets/new
+Completed in 15ms (View: 1, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:45:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+
+ActionView::TemplateError (No route matches {:controller=>"password_resets", :action=>"edit"}) on line #19 of app/views/user_sessions/new.html.erb:
+16:   <%= link_to 'Signup', signup_path %> <br/>
+17:   <%= link_to 'Forgot Password', :controller => "password_resets", 
+18:                                                 :action => "new"%> <br/>
+19:    <%= link_to 'Change Password', :controller => "password_resets",
+20:                                                 :action => "edit"%> <br/>
+
+    app/views/user_sessions/new.html.erb:19
+
+Rendered rescues/_trace (45.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:45:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing PasswordResetsController#index (for 127.0.0.1 at 2010-09-03 12:45:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-03 12:45:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering password_resets/new
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-03 12:45:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Rendered users/_form (2.9ms)
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-03 12:45:50) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"country"=>"", "password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"", "state"=>"", "email"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = '') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = '') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '6900ac20c6ccc5b372c69b0c17dc3e0d6802769b371e46e30d4d306cabeda53c4ad7c843726ca9f70897a9e6f8ecdc662cb01d8823b449cc4823a2847dd14b55') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'QRW6YqaMxc97IZe9RqZI') LIMIT 1[0m
+Rendering users/new
+Rendered users/_form (11.3ms)
+Completed in 102ms (View: 20, DB: 0) | 200 OK [http://localhost/account]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-03 12:47:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering password_resets/new
+Completed in 15ms (View: 1, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing PasswordResetsController#create (for 127.0.0.1 at 2010-09-03 12:47:51) [POST]
+  Parameters: {"commit"=>"Reset my password", "action"=>"create", "controller"=>"password_resets", "email"=>"pablof@insignia4u.com"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'pablof@insignia4u.com') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:47:51', "perishable_token" = 'Kcdh9lkGqiqMuJSDm8P6' WHERE "id" = 1[0m
+Sent mail to pablof@insignia4u.com
+
+Date: Fri, 3 Sep 2010 12:47:52 -0300
+To: pablof@insignia4u.com
+Subject: Password Reset Instructions
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+ A request to reset your password has been made.
+ If you did not make this request, simply ignore this email.
+ If you did make this request just click the link below:
+
+ If the above URL does not work try copying and pasting it into your browser.
+ If you continue to have problem please feel free to contact us.
+
+ActionView::MissingTemplate (Missing template password_resets/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PasswordResetsController#show (for 127.0.0.1 at 2010-09-03 12:48:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"edit", "controller"=>"password_resets"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, edit, new, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100902183958)
+Migrating to AddToUser (20100902190008)
+Migrating to CreateClients (20100902190833)
+Migrating to CreateHolidays (20100902192503)
+Migrating to AddUsersPasswordResetFields (20100903135231)
+Migrating to AddUserToClients (20100903144747)
+Migrating to AddUserToHolidays (20100903144801)
+Migrating to AddNotificationColumn (20100903155150)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "clients" ADD "notification" boolean[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100903155150')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("clients")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("holidays")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-03 12:53:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering user_sessions/new
+Completed in 68ms (View: 51, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-03 12:53:35) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"fede"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'fede') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "login_count" = 8, "updated_at" = '2010-09-03 15:53:35', "perishable_token" = 'sra0eTWkKJfuCxmg7va', "last_request_at" = '2010-09-03 15:53:35', "last_login_at" = '2010-09-03 15:10:29', "current_login_at" = '2010-09-03 15:53:35' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/admin/clients
+Completed in 198ms (DB: 4) | 302 Found [http://localhost/user_session]
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-03 12:53:35) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:53:35', "perishable_token" = 'XpO1SYiAisszNpxDVE8i', "last_request_at" = '2010-09-03 15:53:35' WHERE "id" = 2[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" WHERE (("clients"."user_id" = 2)) ORDER BY clients.name[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (3.7ms)
+Rendered admin/clients/_list (3.9ms)
+Rendered commons/_session (1.5ms)
+Completed in 153ms (View: 32, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 12:53:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#edit (for 127.0.0.1 at 2010-09-03 12:53:41) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"admin/clients"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:53:41', "perishable_token" = 'mpXok1JQkjaNGRkwl8I', "last_request_at" = '2010-09-03 15:53:41' WHERE "id" = 2[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 2) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/clients/_form (2.3ms)
+Rendered commons/_session (1.2ms)
+Completed in 196ms (View: 83, DB: 1) | 200 OK [http://localhost/admin/clients/2/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 12:53:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-03 12:53:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 15:53:44', "perishable_token" = 'OWKi3DUFdPuWQaBxlrdj', "last_request_at" = '2010-09-03 15:53:44' WHERE "id" = 2[0m
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT * FROM "clients" WHERE (("clients"."user_id" = 2)) ORDER BY clients.name[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (3.1ms)
+Rendered admin/clients/_list (2.6ms)
+Rendered commons/_session (1.1ms)
+Completed in 149ms (View: 12, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 12:53:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-03 12:56:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 15:56:53', "perishable_token" = 'J5KPvWyt7xphn6bhdSFp', "last_request_at" = '2010-09-03 15:56:53' WHERE "id" = 2[0m
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT * FROM "clients" WHERE (("clients"."user_id" = 2)) ORDER BY clients.name[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (2.5ms)
+Rendered admin/clients/_list (3.4ms)
+Rendered commons/_session (1.1ms)
+Completed in 187ms (View: 17, DB: 2) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 12:56:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#show (for 127.0.0.1 at 2010-09-03 12:56:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"admin/clients"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 15:56:57', "perishable_token" = 'TmQTb6NAwqJ83OdXvMzs', "last_request_at" = '2010-09-03 15:56:57' WHERE "id" = 2[0m
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM "clients" WHERE ("clients"."id" = 2) [0m
+Rendering template within layouts/admin_layout
+Rendering admin/clients/show
+
+ActionView::TemplateError (undefined method `notification' for nil:NilClass) on line #9 of app/views/admin/clients/show.html.erb:
+6:     end
+7:     p.body do |r|
+8:       r.field 'Email', @resource.email
+9:       r.field 'Notification', @resoyrce.notification
+10:       r.field 'Created at', @resource.created_at
+11:       r.field 'Updated at', @resource.updated_at
+12:     end
+
+    app/views/admin/clients/show.html.erb:9
+    app/views/admin/clients/show.html.erb:7
+    app/views/admin/clients/show.html.erb:3
+
+Rendered rescues/_trace (120.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Admin::ClientsController#destroy (for 127.0.0.1 at 2010-09-03 12:57:08) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "id"=>"2", "controller"=>"admin/clients"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:57:08', "perishable_token" = 'Zo1YXpzoG0gH5Pfc855', "last_request_at" = '2010-09-03 15:57:08' WHERE "id" = 2[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 2) [0m
+  [4;35;1mClient Destroy (0.3ms)[0m   [0mDELETE FROM "clients" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/admin/clients
+Completed in 153ms (DB: 1) | 302 Found [http://localhost/admin/clients/2]
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-03 12:57:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:57:08', "perishable_token" = 'yji8e4pIkrPvCE97TYf', "last_request_at" = '2010-09-03 15:57:08' WHERE "id" = 2[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" WHERE (("clients"."user_id" = 2)) ORDER BY clients.name[0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (4.4ms)
+Rendered admin/clients/_list (0.8ms)
+Rendered commons/_session (1.1ms)
+Completed in 105ms (View: 12, DB: 1) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 12:57:08) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#new (for 127.0.0.1 at 2010-09-03 12:57:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/clients"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 15:57:10', "perishable_token" = 'SFlUEfXd6M7yascINPG2', "last_request_at" = '2010-09-03 15:57:10' WHERE "id" = 2[0m
+Rendering template within layouts/admin_layout
+Rendering commons/base_form
+Rendered admin/clients/_form (2.8ms)
+Rendered commons/_session (1.1ms)
+Completed in 114ms (View: 15, DB: 1) | 200 OK [http://localhost/admin/clients/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 12:57:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Admin::ClientsController#create (for 127.0.0.1 at 2010-09-03 12:57:24) [POST]
+  Parameters: {"commit"=>"Save", "action"=>"create", "client"=>{"name"=>"INSIGNIA", "notification"=>"1", "email"=>"info@insignia4u.com"}, "controller"=>"admin/clients"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-03 15:57:24', "perishable_token" = 'R5C4i8JlNz4Eqoaay', "last_request_at" = '2010-09-03 15:57:24' WHERE "id" = 2[0m
+  [4;35;1mClient Load (0.1ms)[0m   [0mSELECT "clients".id FROM "clients" WHERE ("clients"."name" = 'INSIGNIA') LIMIT 1[0m
+  [4;36;1mClient Load (0.0ms)[0m   [0;1mSELECT "clients".id FROM "clients" WHERE ("clients"."email" = 'info@insignia4u.com') LIMIT 1[0m
+  [4;35;1mClient Create (0.2ms)[0m   [0mINSERT INTO "clients" ("name", "created_at", "notification", "updated_at", "user_id", "email") VALUES('INSIGNIA', '2010-09-03 15:57:24', 't', '2010-09-03 15:57:24', 2, 'info@insignia4u.com')[0m
+Redirected to http://localhost:3000/admin/clients
+Completed in 175ms (DB: 1) | 302 Found [http://localhost/admin/clients]
+
+
+Processing Admin::ClientsController#index (for 127.0.0.1 at 2010-09-03 12:57:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/clients"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-03 15:57:24', "perishable_token" = '4FDi2tGUJBOXOlHJrQn', "last_request_at" = '2010-09-03 15:57:24' WHERE "id" = 2[0m
+  [4;36;1mClient Load (0.4ms)[0m   [0;1mSELECT * FROM "clients" WHERE (("clients"."user_id" = 2)) ORDER BY clients.name[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/admin_layout
+Rendering commons/index
+Rendered commons/_search_form (2.6ms)
+Rendered admin/clients/_list (2.8ms)
+Rendered commons/_session (1.1ms)
+Completed in 114ms (View: 12, DB: 2) | 200 OK [http://localhost/admin/clients]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-03 12:57:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
