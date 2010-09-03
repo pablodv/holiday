@@ -19,10 +19,10 @@ class PasswordResetsController < ApplicationController
     end
  end
 
- def edit
-   render
- end
-
+  def edit
+    @user = current_user
+  end
+ 
  def update
    @user.password = params[:user][:password]
    @user.password_confirmation = params[:user][:password_confirmation]
