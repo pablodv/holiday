@@ -30,7 +30,7 @@ class Notifier < ActionMailer::Base
     from          "Binary Logic Notifier <noreply@binarylogic.com>"
     recipients    client.email
     sent_on       Time.now
-    body          :holiday_reminder_url => holiday.day
+    body          :holiday_reminder_url => holiday
   end
 
 end

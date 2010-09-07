@@ -1,4 +1,5 @@
 <div id="session">
-  <%= current_user.login %>
+  <%= 'Welcome ' + current_user.login + ' !' %>
+  <%= link_to "My Profile", edit_account_path %>
   <%= link_to t('views.logout'), logout_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
 </div>
