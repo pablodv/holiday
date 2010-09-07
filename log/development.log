@@ -9477,3 +9477,50 @@ ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css"
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" WHERE ("holidays"."id" = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100902183958)
+Migrating to AddToUser (20100902190008)
+Migrating to CreateClients (20100902190833)
+Migrating to CreateHolidays (20100902192503)
+Migrating to AddUsersPasswordResetFields (20100903135231)
+Migrating to AddUserToClients (20100903144747)
+Migrating to AddUserToHolidays (20100903144801)
+Migrating to AddNotificationColumn (20100903155150)
+Migrating to AddActiveToUser (20100903175057)
+Migrating to AddOpenidToUser (20100903203252)
+Migrating to AddCheckedToHolidays (20100903205416)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("clients")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("holidays")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+  [4;36;1mClient Load (0.1ms)[0m   [0;1mSELECT * FROM "clients" WHERE ("clients"."id" = 1) [0m
+  [4;35;1mHoliday Load (0.3ms)[0m   [0mSELECT * FROM "holidays" WHERE ("holidays"."id" = 1) [0m
+Sent mail to cliente@cliente.com
+
+Date: Tue, 7 Sep 2010 09:41:12 -0300
+From: Binary Logic Notifier <noreply@binarylogic.com>
+To: cliente@cliente.com
+Subject: Activation Complete
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+This a reminder of the next holidays:
+
+2010-09-03

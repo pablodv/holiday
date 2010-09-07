@@ -25,4 +25,12 @@ class Notifier < ActionMailer::Base
     body          :root_url => root_url
   end
 
+  def holiday_reminder(client, holiday)
+    subject       "Holiday Reminder"
+    from          "Binary Logic Notifier <noreply@binarylogic.com>"
+    recipients    client.email
+    sent_on       Time.now
+    body          :holiday_reminder_url => holiday.day
+  end
+
 end
