@@ -14070,3 +14070,162 @@ ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css"
   
 
 Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-07 17:08:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/layout
+Rendering user_sessions/new
+Completed in 21ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-07 17:08:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-07 17:08:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+NoMethodError (undefined method `admin_layout' for #<UsersController:0xb6ca6bf4>):
+  
+
+Rendered rescues/_trace (108.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-07 17:08:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/layout
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 22ms (View: 9, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-07 17:08:31) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-07 17:09:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/layout
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 93ms (View: 14, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-07 17:09:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-07 17:09:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/layout
+Rendering users/new
+Rendered users/_form (2.9ms)
+
+ActionView::TemplateError (undefined local variable or method `login_apth' for #<ActionView::Base:0xb6ddc244>) on line #10 of app/views/users/new.html.erb:
+7:   <%= f.submit "Register" %>
+8: <% end %>
+9: 
+10: <%=  link_to "Back", login_apth %>
+
+    app/views/users/new.html.erb:10
+
+Rendered rescues/_trace (111.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-07 17:10:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/layout
+Rendering users/new
+Rendered users/_form (2.9ms)
+Completed in 28ms (View: 13, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-07 17:10:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-07 17:10:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/layout
+Rendering user_sessions/new
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-07 17:10:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-07 17:10:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering password_resets/new
+Completed in 20ms (View: 5, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-07 17:10:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering template within layouts/layout
+Rendering password_resets/new
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-07 17:10:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PasswordResetsController#new (for 127.0.0.1 at 2010-09-07 17:11:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"password_resets"}
+Rendering template within layouts/layout
+Rendering password_resets/new
+Completed in 80ms (View: 68, DB: 0) | 200 OK [http://localhost/password_resets/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-07 17:11:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-07 17:11:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/layout
+Rendering user_sessions/new
+Completed in 20ms (View: 6, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-07 17:11:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/admin_custom.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
