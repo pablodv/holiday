@@ -16,18 +16,18 @@ class PasswordResetsController < ApplicationController
        "Please check your email."
        redirect_to login_path
     else
-       flash[:notice] = "No user was found with that email address"
+       flash[:notice] = "No user was found with that email address #{params[:email]}"
        render :action => :new
     end
  end
 
   def edit
-    @user = current_user
+    #@user = current_user
   end
  
  def update
-   @user.password = params[:user][:password]
-   @user.password_confirmation = params[:user][:password_confirmation]
+   #@user.password = params[:user][:password]
+   #@user.password_confirmation = params[:user][:password_confirmation]
    if @user.save
      flash[:notice] = "Password successfully updated"
      redirect_to admin_client_path
