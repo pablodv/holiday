@@ -1,4 +1,5 @@
 class ActivationsController < ApplicationController
+  layout "layout"
 
   before_filter :require_no_user, :only => [:new, :create]
 
