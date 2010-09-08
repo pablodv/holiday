@@ -7,7 +7,7 @@ namespace :mailer do
     @holidays = @user.holidays.active.recent
 
     @clients.each do |c|      
-        Notifier.deliver_holiday_reminder(c,@holidays)      
+        Notifier.deliver_holiday_reminder(c,@holidays)
     end
 
   end

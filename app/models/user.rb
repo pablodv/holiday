@@ -46,5 +46,4 @@ class User < ActiveRecord::Base
     Notifier.deliver_activation_confirmation(self)
   end
 
-  
 end

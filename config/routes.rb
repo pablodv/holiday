@@ -4,12 +4,14 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :holidays
   end
 
+  
+  
   map.resource :account, :controller => "users"
   map.resources :users
   map.resource :user_session
   #map.resources :password_resets
   map.resources :password_resets, :only => [ :new, :create, :edit, :update ]
-
+  
 
   map.login '/login', :controller => "user_sessions", :action => "new"
   map.logout '/logout', :controller => "user_sessions", :action => "destroy"
@@ -19,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.register '/register/:activation_code', :controller => 'activations', :action => 'new'
   map.activate '/activate/:id', :controller => 'activations', :action => 'create'
-
+  map.excep '/exception/:id',  :controller => "exception",  :action => "index"
 
   #  The priority is based upon order of creation: first created -> highest priority.
 
