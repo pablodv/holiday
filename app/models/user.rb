@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :clients
   has_many :holidays
 
-  attr_accessible :login, :email, :password, :password_confirmation, :openid_identifier
+  attr_accessible :login, :email, :password, :password_confirmation, :openid_identifier, :state
 
   def active?
     active
