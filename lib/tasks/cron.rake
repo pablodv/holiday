@@ -2,7 +2,7 @@
   desc "Email with de upcoming holidays"
   task :cron => :environment do
 
-    if Time.now.wday == 4
+    if Time.now.wday == 1
 
       @users = User.find(:all)
 
