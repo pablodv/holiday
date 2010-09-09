@@ -14,6 +14,7 @@
           Notifier.deliver_holiday_reminder(c,@holidays)
       end
     end
+    puts "Run cron #{Time.now.day}"
   end
 
   end
