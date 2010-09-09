@@ -10,7 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :user_session
   #map.resources :password_resets
-  map.resources :password_resets, :only => [ :new, :create, :edit, :update ]
+  map.resources :password_resets
+  map.resources 'password_resets/:perishable_token', :controller => "password_reset", :action => "update"
   
 
   map.login '/login', :controller => "user_sessions", :action => "new"
