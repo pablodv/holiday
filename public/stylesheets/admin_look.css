@@ -391,6 +391,7 @@ div.elegant div.actions a.neutro:hover {
 }
 
 #base_form div.field input,
+#base_form div.field select,
 #base_form div.field textarea {
   width: 912px;
   border: 1px solid #cfcfcf;

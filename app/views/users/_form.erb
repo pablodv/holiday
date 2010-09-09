@@ -10,9 +10,9 @@
 <%= form.label :email %><br />
 <%= form.text_field :email %><br />
 <br/>
+<%= form.label :country %><br />
+<%= form.select :country, User::COUNTRIES, :prompt  => "Select a country" %><br />
+<br/>
 <%= form.label :state %><br />
 <%= form.text_field :state %><br />
-<br/>
-<%= form.label :country %><br />
-<%= form.text_field :country %><br />
 <br/>

@@ -3,6 +3,9 @@ class Admin::ClientsController < Admin::CoreController
     admin.includes :user
     admin.search  "clients.name"
     admin.order  "clients.name"
+    admin.filters do |f|
+      f.set :notification, :conditions => {:notification => true}
+    end
   end
 
   def general_conditions
