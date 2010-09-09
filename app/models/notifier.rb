@@ -22,7 +22,7 @@ class Notifier < ActionMailer::Base
     from          "Holiday Reminder <noreply@holidayreminder.com>"
     recipients    user.email
     sent_on       Time.now
-    body          :root_url => root_url
+    body          :root_url => login_url
   end
 
   def holiday_reminder(client, holiday)
