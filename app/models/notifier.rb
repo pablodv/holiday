@@ -30,7 +30,8 @@ class Notifier < ActionMailer::Base
     from          "Holiday Reminder <noreply@holidayreminder.com>"
     recipients    client.email
     sent_on       Time.now
-    body          :holiday_reminder_url => holiday, :exception_mailer => login_url
+    body          :holiday_reminder_url => holiday, :exception_mailer => 
+                                            edit_exception_url(client.id)
   end
 
 end

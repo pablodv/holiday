@@ -10,9 +10,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :user_session
   map.resources :password_resets
+  map.resources :exception
+  map.exception '/exception/:id/edit', :controller => 'exception', :action => 'edit'
   
-  
-
   map.login '/login', :controller => "user_sessions", :action => "new"
   map.logout '/logout', :controller => "user_sessions", :action => "destroy"
   map.signup 'signup', :controller => "users", :action => "new"
@@ -21,8 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.register '/register/:activation_code', :controller => 'activations', :action => 'new'
   map.activate '/activate/:id', :controller => 'activations', :action => 'create'
-  map.excep '/exception/:id',  :controller => "exception",  :action => "index"
-
+  
   #  The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
